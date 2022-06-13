@@ -12,6 +12,12 @@ function createWindow() {
     show: false,
     webPreferences: {
       nativeWindowOpen: true,
+      experimentalFeatures: true,
+      nodeIntegration: true,
+      contextIsolation: false,
+      enablePreferredSizeMode: true,
+      sandbox: false,
+      webSecurity: true
     },
   });
 
@@ -26,7 +32,7 @@ function createWindow() {
     protocol: 'file:',
     slashes: true,
   });
-  const url = isDev ? devPath : prodPath;
+  const url = 'https://www.curseforge.com/minecraft/modpacks/rlcraft';
 
   mainWindow.setMenu(null);
   mainWindow.loadURL(url);
